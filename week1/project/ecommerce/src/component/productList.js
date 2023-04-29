@@ -1,5 +1,6 @@
-import products from "./fake-data/all-products";
+import products from "../fake-data/all-products";
 import { ProductsItem } from "./productsItem";
+
 function ProductList({ selectedCategory }) {
   return (
     <ul className="products">

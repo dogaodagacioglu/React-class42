@@ -1,13 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import categories from "./fake-data/all-categories";
+import categories from "../fake-data/all-categories";
 
 function CategoryList({ handleCategoryClick }) {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(null);
-
-  const handleClickForBackgroundColor = (index) => {
-    setSelectedCategoryIndex(index);
-  };
 
   return (
     <div className="categories">
@@ -20,7 +16,7 @@ function CategoryList({ handleCategoryClick }) {
               : "categories--item"
           }
           onClick={(e) => {
-            handleClickForBackgroundColor(index);
+            setSelectedCategoryIndex(index);
             handleCategoryClick(e);
           }}
         >

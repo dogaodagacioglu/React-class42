@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CategoryList from "./categoryList";
-import ProductList from "./productList";
+import CategoryList from "./component/categoryList.js";
+import ProductList from "./component/productList.js";
 import "./App.css";
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
   function handleCategoryClick(e) {
     const selectedCategory = e.target.textContent.slice(6);
     setSelectedCategory(selectedCategory);
+    console.log(selectedCategory)
   }
 
   return (
