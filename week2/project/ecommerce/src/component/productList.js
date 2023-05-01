@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ProductsItem } from "./productsItem";
 
+
 function ProductList({ selectedCategory }) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +24,7 @@ function ProductList({ selectedCategory }) {
       })
       .then(data => {
         setProducts(data);
+        console.log(data)
         setIsLoading(false);
         setErrorMessage(null);
       })
@@ -41,7 +43,9 @@ function ProductList({ selectedCategory }) {
         <ul className="products">
           {products.map(product => (
             <li key={product.id} className="products--item">
-              <ProductsItem product={product} />
+             
+                <ProductsItem product={product} />
+            
             </li>
           ))}
         </ul>

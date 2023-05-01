@@ -1,6 +1,7 @@
 import React from 'react';
 
-export const ProductsDetails = ({ product }) => {
+
+export const ProductDetails = ({ product }) => {
     return (
     <div className='root'>
       <div className='product-details'>
@@ -19,3 +20,5 @@ export const ProductsDetails = ({ product }) => {
     </div>
     );
   };
+
+  export default ProductDetails;
