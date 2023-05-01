@@ -1,8 +1,23 @@
-import React from "react";
-import { useState } from "react";
-import categories from "../fake-data/all-categories";
+import React, { useState, useEffect } from "react";
 
-function CategoryList({ handleCategoryClick }) {
+const CategoryList = ({ handleCategoryClick }) => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    async function fetchCategories() {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products/categories');
+        const data = await response.json();
+        setCategories(data);
+        console.log(data)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchCategories();
+  }, []);
+
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(null);
 
   return (
@@ -25,6 +40,6 @@ function CategoryList({ handleCategoryClick }) {
       ))}
     </div>
   );
-}
+};
 
 export default CategoryList;

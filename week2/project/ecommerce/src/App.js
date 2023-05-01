@@ -7,9 +7,8 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   function handleCategoryClick(e) {
-    const selectedCategory = e.target.textContent.slice(6);
+    const selectedCategory = e.target.textContent;
     setSelectedCategory(selectedCategory);
-    console.log(selectedCategory)
   }
 
   return (
