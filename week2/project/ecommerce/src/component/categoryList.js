@@ -6,10 +6,11 @@ const CategoryList = ({ handleCategoryClick }) => {
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const response = await fetch('https://fakestoreapi.com/products/categories');
+        const response = await fetch(
+          "https://fakestoreapi.com/products/categories"
+        );
         const data = await response.json();
         setCategories(data);
-        console.log(data)
       } catch (error) {
         console.error(error);
       }
