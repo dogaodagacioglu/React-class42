@@ -6,6 +6,7 @@ export const ProductDetails = () => {
   const [product, setProduct] = useState({});
   let { id } = useParams();
 
+
   useEffect(() => {
     const getProduct = async () => {
       try {

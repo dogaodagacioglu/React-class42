@@ -23,7 +23,6 @@ function ProductList({ selectedCategory }) {
       })
       .then((data) => {
         setProducts(data);
-
         setIsLoading(false);
         setErrorMessage(null);
       })

@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <h1>Products</h1>
 
-      <CategoryList handleCategoryClick={handleCategoryClick} />
+      <CategoryList handleCategoryClick={handleCategoryClick} selectedCategory={selectedCategory} />
       <ProductList selectedCategory={selectedCategory} />
     </div>
   );
