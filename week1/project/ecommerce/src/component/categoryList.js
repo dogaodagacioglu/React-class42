@@ -2,21 +2,19 @@ import React from "react";
 import { useState } from "react";
 import categories from "../fake-data/all-categories";
 
-function CategoryList({ handleCategoryClick }) {
-  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(null);
+function CategoryList({ handleCategoryClick, selectedCategory }) {
 
   return (
     <div className="categories">
-      {categories.map((category, index) => (
+      {categories.map((category) => (
         <div
-          key={index}
+          key={category}
           className={
-            selectedCategoryIndex === index
+            selectedCategory === category
               ? "categories--item categories--item-selected"
               : "categories--item"
           }
           onClick={(e) => {
-            setSelectedCategoryIndex(index);
             handleCategoryClick(e);
           }}
         >
